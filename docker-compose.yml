@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  sqlite:
+    image: drupalci/sqlite-3:production
+    container_name: sqlite_db
+    environment:
+      - SQLITE_DB=Rates
+      - SQLITE_USER=sqlite
+      - SQLITE_PASSWORD=sqlite
+    volumes:
+      - ./data:/var/lib/sqlite
+    ports:
+      - "5435:5432"
